@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- meta tags start  -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta tags end -->
+
+    <title>Carousel</title>
+
+    <!-- Javascript 1 file -->
+    <script defer src="carousel.js"></script>
+
+    <style>
+        /* importing Montserrat font */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-weight: 500;
+        }
+
+        /* most outter container for containing dots and arrows*/
+        .main-wrapper {
+            position: relative;
+        }
+
+        /* container for hiding overflow */
+        .container {
+            width: 800px;
+            height: 290px;
+            overflow: hidden;
+            position: relative;
+        }
+
+
+        /* container of the slide */
+        .slide-container {
+            width: 2500px;
+            height: 100%;
+            display: flex;
+            gap: 33px;
+            transform: translate(0);
+            transition: all 1s;
+        }
+
+
+        /* UI inside slides */
+        .slide {
+            line-height: 1.8;
+            display: flex;
+            gap: 20px;
+            width: 800px;
+            height: 100%;
+            padding: 20px;
+            color: #444;
+        }
+
+        .num {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fde047;
+            clip-path: polygon(50% 0%, 0 82%, 100% 81%);
+        }
+
+        /* arrows button */
+        .arr {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            clip-path: circle();
+            background-color: #ffedd5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 23px;
+            cursor: pointer;
+        }
+
+        .left-arrow,
+        .right-arrow {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .left-arrow {
+            left: -60px;
+        }
+
+        .right-arrow {
+            right: -60px;
+        }
+
+        /* sliding class */
+        .slide-0 {
+            transform: translate(0);
+        }
+
+        .slide-1 {
+            transform: translate(-33.3%);
+        }
+
+        .slide-2 {
+            transform: translate(-66.6%);
+        }
+
+        /* dots */
+        .dot-container {
+            width: 100px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            gap: 10px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            clip-path: circle();
+            background-color: #cfcfcf;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #fde047;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <section class="main-wrapper">
+        <div class="left-arrow arr left--btn">
+            &larr;
+        </div>
+
+        <div class="right-arrow arr right--btn">
+            &rarr;
+        </div>
+
+        <div class="dot-container">
+        </div>
+
+        <div class="container">
+            <div class="slide-container">
+                <div class="slide">
+                    <div>
+                        <div class="num">1</div>
+                    </div>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard
+                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                    make
+                    a
+                    type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining
+                    essentially
+                    unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                    Ipsum
+                    passages, and more
+                    recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </div>
+                <div class="slide">
+                    <div>
+                        <div class="num">2</div>
+                    </div>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard
+                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                    make
+                    a
+                    type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining
+                    essentially
+                    unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                    Ipsum
+                    passages, and more
+                    recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </div>
+                <div class="slide">
+                    <div>
+                        <div class="num">3</div>
+                    </div>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard
+                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                    make
+                    a
+                    type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining
+                    essentially
+                    unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                    Ipsum
+                    passages, and more
+                    recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
